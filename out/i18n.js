@@ -32,7 +32,7 @@
 
     /* home: hero */
     'Bar i Agroturystyka · Rudawy Janowickie': 'Bar & Agrotourism · Rudawy Janowickie mountains',
-    'Zarezerwuj online': 'Book online', 'Zobacz pokoje': 'See the rooms', 'Talerz z pstrągiem, specjalnością baru': 'A plate of trout, the bar\'s specialty', 'Zobacz całe menu →': 'See the full menu →',
+    'Zarezerwuj online': 'Book online', 'Zobacz pokoje': 'See the rooms', 'Kotlet z frytkami i domowe piwo w ogrodzie': 'Cutlet with fries and house beer in the garden', 'Zobacz całe menu →': 'See the full menu →',
     'ocena gości na Nocowanie.pl': 'guest rating on Nocowanie.pl',
     'ocena gości na Noclegi.pl': 'guest rating on Noclegi.pl',
     'of Poland, kategoria Agroturystyka': 'of Poland, Agrotourism category',
