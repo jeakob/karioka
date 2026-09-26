@@ -154,6 +154,7 @@
     'Karioka to rodzinne miejsce u stóp Rudaw Janowickich: bar z domową kuchnią, pokoje dla gości i ogród, w którym zwykle zostaje się dłużej, niż się planowało.': 'Karioka is a family-run place at the foot of the Rudawy Janowickie mountains: a bar with home cooking, guest rooms and a garden where people usually stay longer than planned.',
     'Zarezerwuj pobyt': 'Book a stay',
     'Właściciele Karioki, kobieta i mężczyzna, w sali baru z błękitną boazerią i lampami': 'The owners of Karioka, a woman and a man, in the bar room with blue wainscoting and lamps',
+    'Kącik wypoczynkowy pod parasolem w ogrodzie Karioki': 'Seating under a parasol in the Karioka garden',
     'Ogród Karioki wieczorem': 'The Karioka garden in the evening',
     'Bar, pokoje i ogród pod jednym dachem.': 'Bar, rooms and garden under one roof.',
     'Kuchnia': 'Kitchen', 'Pierogi, pstrąg, golonka, barszcz i naleśniki. Menu piszemy kredą przy barze.': 'Pierogi, trout, pork knuckle, borscht and crêpes. We write the menu in chalk by the bar.',
