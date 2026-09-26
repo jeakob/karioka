@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17211b">
+<meta name="color-scheme" content="dark">
+<title>Imprezy - Karioka · Karpniki</title>
+<meta name="description" content="Komunie, spotkania integracyjne i pikniki w ogrodzie Karioki w Karpnikach.">
+<link rel="preload" href="fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{--ground:#17211b;--raise:#1f2b24;--ink:#f3ecdf;--soft:#d8d0c1;--mute:#a9b3a4;--fire:#e8894f;--fire-text:#e8894f;--line:rgba(243,236,223,.12)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--fire);color:var(--ground)}
+a{color:var(--fire-text);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}@media(hover:hover) and (pointer:fine){ a:hover{color:var(--ink)}}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--fire);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:'Young Serif',serif;font-weight:400;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.btn{display:inline-block;padding:16px 26px;border-radius:999px;background:var(--fire);color:var(--ground);font-weight:700;font-size:16px;text-decoration:none;transition:background .2s}
+@media(hover:hover) and (pointer:fine){.btn:hover{background:var(--ink);color:var(--ground)}}
+.pad{padding:clamp(48px,7vw,110px) clamp(20px,4vw,56px)}
+.wrap{max-width:1180px;margin:0 auto}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rise{animation:rise .3s cubic-bezier(.23,1,.32,1) both}
+.rise.d2{animation-delay:.05s}.rise.d3{animation-delay:.1s}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rise{animation:none}}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:28px clamp(20px,4vw,56px);border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+
+.stage{position:relative;min-height:min(86vh,820px);display:flex;align-items:flex-end;overflow:hidden}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(23,33,27,.96) 0%,rgba(23,33,27,.55) 45%,rgba(23,33,27,.1) 100%)}
+.stage .in{position:relative;z-index:1;width:100%;padding:clamp(28px,5vw,64px) clamp(20px,4vw,56px);box-sizing:border-box}
+h1{font-size:clamp(52px,9vw,112px);line-height:.92;letter-spacing:-.03em;max-width:12ch}
+.lede{font-size:20px;line-height:1.6;color:#e6dfd0;max-width:54ch;margin-top:20px}
+.occ{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0 clamp(20px,3vw,48px)}
+.occ>div{padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--line)}
+.occ h2{font-size:clamp(28px,3.4vw,42px);letter-spacing:-.02em;margin-bottom:12px}
+.occ p{color:var(--soft);line-height:1.6;font-size:17px;max-width:38ch}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,5vw,72px);align-items:center;margin-top:clamp(40px,6vw,90px)}
+.split img{display:block;width:100%;height:auto;border-radius:20px}
+.split h2{font-size:clamp(34px,4.6vw,60px);line-height:1;letter-spacing:-.025em}
+.split ul{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;color:var(--soft);font-size:18px;line-height:1.5}
+.split li{padding-left:22px;position:relative}
+.split li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px;background:var(--fire)}
+.close{margin-top:clamp(64px,9vw,120px);padding:clamp(32px,5vw,64px);border-radius:28px;background:var(--fire);color:var(--ground);display:flex;flex-wrap:wrap;gap:28px 48px;align-items:center;justify-content:space-between}
+.close h2{font-size:clamp(34px,4.6vw,60px);line-height:1;letter-spacing:-.025em;max-width:16ch}
+.close p{max-width:44ch;font-size:18px;line-height:1.55;margin-top:12px}
+.close a.tel{font-family:'Young Serif',serif;font-size:clamp(34px,5vw,60px);color:var(--ground);text-decoration:none;white-space:nowrap}
+@media(hover:hover) and (pointer:fine){.close a.tel:hover{color:var(--ink)}}
+.close .sub{font-size:15px;margin-top:8px}.close .sub a{color:var(--ground)}
+
+</style>
+<script src="i18n.js"></script>
+<link rel="stylesheet" href="fluid.css">
+</head>
+<body>
+<nav class="top">
+  <a class="brand" href="Karioka.html"><b>Karioka</b><small>Karpniki</small></a>
+  <div class="links">
+    <a href="Menu.html">Menu</a>
+    <a href="Karioka.html#pokoje">Pokoje</a>
+    <a href="Imprezy.html" aria-current="page">Imprezy</a>
+    <a href="O-nas.html">O nas</a>
+  </div>
+  <div class="navcta"><a class="tel" href="tel:+48721832199">721 832 199</a><a class="call" href="Rezerwacja.html">Zarezerwuj</a></div>
+</nav>
+
+<header class="stage">
+  <img src="w/about-party.webp" alt="Namiot w ogrodzie Karioki z nakrytymi stołami w czerwoną kratę, lampionami i girlandą świetlną" width="1800" height="1012">
+  <div class="in"><div class="wrap">
+    <h1 class="rise">Impreza w ogrodzie.</h1>
+    <p class="lede rise d2">Komunie, spotkania integracyjne, pikniki i imprezy plenerowe z grillem i ogniskiem, pod namiotem w naszym ogrodzie w Karpnikach.</p>
+    <div class="rise d3" style="margin-top:28px"><a class="btn" href="tel:+48721832199">Zapytaj o termin: 721 832 199</a></div>
+  </div></div>
+</header>
+<main class="pad"><div class="wrap">
+  <div class="occ">
+    <div><h2>Komunie i rodzinne uroczystości</h2><p>Nakryte stoły, domowa kuchnia z baru i dzieci, które od razu znikają na huśtawce.</p></div>
+    <div><h2>Spotkania integracyjne</h2><p>Firma, klub albo ekipa znajomych. Ogród na cały dzień, grill, a wieczorem ognisko.</p></div>
+    <div><h2>Pikniki i imprezy plenerowe</h2><p>Grill i ognisko na świeżym powietrzu, z lampionami i światełkami, gdy zapada zmrok.</p></div>
+  </div>
+  <div class="split">
+    <img src="w/garden-evening.webp" alt="Wieczorem w ogrodzie Karioki: stoliki w czerwoną kratę, lampiony i światełka" width="1600" height="1067" loading="lazy">
+    <div>
+      <h2>Wszystko na miejscu.</h2>
+      <ul>
+        <li>Ogród z namiotem i altaną oraz plac zabaw z huśtawką dla dzieci.</li>
+        <li>Bar z domową kuchnią, piwem i drinkami: <a href="Menu.html">zobacz menu</a>.</li>
+        <li>Pięć pokoi nad barem i 14 miejsc noclegowych, więc goście nie muszą wracać po zmroku.</li>
+        <li>Zwierzęta mile widziane, dopłata 20 zł za dobę.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="close">
+    <div><h2>Opowiedz, co planujesz.</h2><p>Termin, liczbę gości i rodzaj imprezy ustalamy rozmową. Powiemy, co możemy przygotować.</p></div>
+    <div><a class="tel" href="tel:+48721832199">721 832 199</a><p class="sub">lub napisz: <a href="mailto:agrokarioka@poczta.onet.pl">agrokarioka@poczta.onet.pl</a></p></div>
+  </div>
+</div></main>
+<footer>
+  <span style="font-family:'Young Serif',serif;font-size:22px;color:var(--ink)">Karioka</span>
+  <span>Bar i Agroturystyka · ul. Rudawska 63, 58-533 Karpniki</span>
+  <a href="https://www.facebook.com/karioka.karpniki/" target="_blank" rel="noopener">Facebook</a>
+</footer>
+</body>
+</html>

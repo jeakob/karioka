@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17211b">
+<meta name="color-scheme" content="dark">
+<title>Menu - Karioka · Karpniki</title>
+<meta name="description" content="Menu baru Karioka w Karpnikach: zupy, pierogi, pstrąg, golonka i napoje.">
+<link rel="preload" href="fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site.css">
+<style>
+:root{--ground:#17211b;--raise:#1f2b24;--ink:#f3ecdf;--soft:#d8d0c1;--mute:#a9b3a4;--fire:#e8894f;--fire-text:#e8894f;--line:rgba(243,236,223,.12)}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:var(--fire);color:var(--ground)}
+a{color:var(--fire-text);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em}@media(hover:hover) and (pointer:fine){ a:hover{color:var(--ink)}}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--fire);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:'Young Serif',serif;font-weight:400;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.btn{display:inline-block;padding:16px 26px;border-radius:999px;background:var(--fire);color:var(--ground);font-weight:700;font-size:16px;text-decoration:none;transition:background .2s}
+@media(hover:hover) and (pointer:fine){.btn:hover{background:var(--ink);color:var(--ground)}}
+.pad{padding:clamp(48px,7vw,110px) clamp(20px,4vw,56px)}
+.wrap{max-width:1180px;margin:0 auto}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rise{animation:rise .3s cubic-bezier(.23,1,.32,1) both}
+.rise.d2{animation-delay:.05s}.rise.d3{animation-delay:.1s}
+@media(prefers-reduced-motion:reduce){.rise{animation:none}}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:28px clamp(20px,4vw,56px);border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,5vw,64px);align-items:center}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:20px}
+h1{font-size:clamp(52px,9vw,112px);line-height:.92;letter-spacing:-.03em}
+.lede{font-size:19px;line-height:1.6;color:#c9c1b2;max-width:52ch}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(40px,6vw,96px);margin-top:clamp(56px,8vw,112px)}
+.menu section+section{margin-top:clamp(36px,5vw,64px)}
+.menu h2{font-size:clamp(30px,3.6vw,44px);letter-spacing:-.02em;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{display:flex;align-items:baseline;gap:10px;padding:11px 0;font-size:18px}
+.menu li .dots{flex:1;border-bottom:1px dotted rgba(243,236,223,.25);transform:translateY(-4px);min-width:16px}
+.menu li .p{font-variant-numeric:tabular-nums;font-weight:600;color:var(--fire-text);white-space:nowrap}
+.menu li .n small{display:block;font-size:14px;color:var(--mute)}
+.menu li .n{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.tags{display:inline-flex;flex-wrap:wrap;gap:4px}
+.al{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;line-height:1.5;border:1px solid currentColor}
+.al-gluten{color:#e8a06a}.al-jaja{color:#e8cf6a}.al-mleko{color:#9fc4e0}.al-seler{color:#a6d19a}.al-siarczyny{color:#d59ac0}
+.beer{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,5vw,64px);align-items:center;margin-top:clamp(56px,8vw,112px);padding:clamp(24px,4vw,48px);background:var(--raise);border-radius:24px}
+.beer img{display:block;width:100%;max-width:380px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:16px;justify-self:center}
+.beer h2{font-size:clamp(32px,4.4vw,56px);letter-spacing:-.02em;line-height:1}
+.beer p{margin-top:16px;font-size:18px;line-height:1.6;color:var(--soft);max-width:44ch}
+.legend{margin-top:clamp(40px,6vw,72px);padding-top:24px;border-top:1px solid var(--line)}
+.legend h2{font-size:clamp(22px,2.6vw,28px);margin-bottom:10px}
+.legend p{font-size:14px;line-height:1.6;color:var(--mute);max-width:70ch}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:clamp(40px,6vw,80px)}
+.strip img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
+.after{margin-top:clamp(56px,8vw,96px);padding-top:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+
+</style>
+<script src="i18n.js"></script>
+<link rel="stylesheet" href="fluid.css">
+</head>
+<body>
+<nav class="top">
+  <a class="brand" href="Karioka.html"><b>Karioka</b><small>Karpniki</small></a>
+  <div class="links">
+    <a href="Menu.html" aria-current="page">Menu</a>
+    <a href="Karioka.html#pokoje">Pokoje</a>
+    <a href="Imprezy.html">Imprezy</a>
+    <a href="O-nas.html">O nas</a>
+  </div>
+  <div class="navcta"><a class="tel" href="tel:+48721832199">721 832 199</a><a class="call" href="Rezerwacja.html">Zarezerwuj</a></div>
+</nav>
+
+<main class="pad"><div class="wrap">
+  <div class="hero">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <h1 class="rise" style="font-size:clamp(44px,7vw,92px)">Co jemy w Karioce.</h1>
+      <p class="lede rise d2">Domowa, polska kuchnia. Ceny i alergeny podajemy przy daniach. Tablica się zmienia, więc jeśli szukasz konkretnego dania, zadzwoń przed wizytą. Bar czynny codziennie 13:00-19:00.</p>
+      <div class="rise d3" style="display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center"><a class="btn" href="Rezerwacja.html">Zarezerwuj</a><a href="tel:+48721832199">lub zadzwoń: 721 832 199</a></div>
+    </div>
+    <img class="rise d2" src="w/fries-beer.webp" alt="Kotlet z frytkami i surówką, obok kufel piwa i pierogi na stole w czerwoną kratę" width="1200" height="900">
+  </div>
+  <div class="menu">
+    <div><section><h2>Zupy</h2><ul><li><span class="n">barszcz czysty<span class="tags"><span class="al">seler</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">7 zł</span></li><li><span class="n">barszcz z uszkami<span class="tags"><span class="al">gluten</span><span class="al">seler</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">15 zł</span></li><li><span class="n">flaki<span class="tags"><span class="al">gluten</span><span class="al">seler</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">19 zł</span></li><li><span class="n">gulaszowa<span class="tags"><span class="al">gluten</span><span class="al">seler</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">19 zł</span></li><li><span class="n">zupa dnia<span class="tags"><span class="al">gluten</span><span class="al">seler</span><span class="al">mleko</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">15 zł</span></li></ul></section><section><h2>Pierogi i naleśniki</h2><ul><li><span class="n">pierogi ukraińskie<span class="tags"><span class="al">gluten</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">27 zł</span></li><li><span class="n">pierogi z kapustą<span class="tags"><span class="al">gluten</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">27 zł</span></li><li><span class="n">pierogi z mięsem<span class="tags"><span class="al">gluten</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">30 zł</span></li><li><span class="n">pierogi z owocami<span class="tags"><span class="al">gluten</span><span class="al">mleko</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">38 zł</span></li><li><span class="n">naleśniki z serem<span class="tags"><span class="al">gluten</span><span class="al">jaja</span><span class="al">mleko</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">18 zł</span></li></ul></section><section><h2>Sosy</h2><ul><li><span class="n">ketchup / musztarda<span class="tags"><span class="al">seler</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">2 zł</span></li><li><span class="n">sos czosnkowy<span class="tags"><span class="al">seler</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">3 zł</span></li></ul></section></div>
+    <div><section><h2>Zestawy</h2><ul><li><span class="n">kotlet schabowy<span class="tags"><span class="al">gluten</span><span class="al">jaja</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">46 zł</span></li><li><span class="n">kotlet z piersi kurczaka<span class="tags"><span class="al">gluten</span><span class="al">jaja</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">46 zł</span></li><li><span class="n">golonka<small>za kilogram</small></span><span class="dots" aria-hidden="true"></span><span class="p">55 zł</span></li><li><span class="n">pstrąg smażony<span class="tags"><span class="al">gluten</span><span class="al">seler</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">57 zł</span></li><li><span class="n">ser smażony<span class="tags"><span class="al">gluten</span><span class="al">jaja</span><span class="al">mleko</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">45 zł</span></li><li><span class="n">ser camembert<span class="tags"><span class="al">gluten</span><span class="al">jaja</span><span class="al">mleko</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">46 zł</span></li><li><span class="n">jajka sadzone<span class="tags"><span class="al">jaja</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">37 zł</span></li></ul></section><section><h2>Dodatki</h2><ul><li><span class="n">frytki / ziemniaczki / kuskus</span><span class="dots" aria-hidden="true"></span><span class="p">8 zł</span></li><li><span class="n">surówka<span class="tags"><span class="al">seler</span><span class="al">mleko</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">5 zł</span></li><li><span class="n">bukiet surówek<span class="tags"><span class="al">seler</span><span class="al">mleko</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">14 zł</span></li><li><span class="n">fasolka po bretońsku<span class="tags"><span class="al">gluten</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">16 zł</span></li></ul></section><section><h2>Napoje gorące</h2><ul><li><span class="n">herbata</span><span class="dots" aria-hidden="true"></span><span class="p">9 zł</span></li><li><span class="n">herbata smakowa</span><span class="dots" aria-hidden="true"></span><span class="p">10 zł</span></li><li><span class="n">espresso / kawa czarna</span><span class="dots" aria-hidden="true"></span><span class="p">9 zł</span></li><li><span class="n">kawa z mlekiem</span><span class="dots" aria-hidden="true"></span><span class="p">10 zł</span></li><li><span class="n">cappuccino</span><span class="dots" aria-hidden="true"></span><span class="p">11 zł</span></li><li><span class="n">latte</span><span class="dots" aria-hidden="true"></span><span class="p">14 zł</span></li><li><span class="n">grzane wino<span class="tags"><span class="al">siarczyny</span></span></span><span class="dots" aria-hidden="true"></span><span class="p">20 zł</span></li><li><span class="n">grzane piwo</span><span class="dots" aria-hidden="true"></span><span class="p">13 zł</span></li></ul></section></div>
+  </div>
+  <section class="beer" aria-labelledby="beer-h">
+    <img src="w/beer-karioka.webp" alt="Butelka piwa Karioka „Bez spiny” 0,3%, kraftowe bezalkoholowe, na stole w czerwoną kratę" width="900" height="1200" loading="lazy">
+    <div><h2 id="beer-h">Nasze piwo. Bez spiny.</h2><p>Kraftowe piwo z naszą etykietą, bezalkoholowe (0,3%). Inne piwa i drinki czekają w barze.</p></div>
+  </section>
+  <aside class="legend" aria-labelledby="alg-h">
+    <h2 id="alg-h">Alergeny</h2>
+    <p>Przy daniach oznaczamy: gluten (zboża zawierające gluten), jaja, mleko (w tym laktoza), seler i siarczyny. Oznaczenia mogą być niepełne (np. gorczyca, ryby), dlatego zawsze pytaj obsługę. Skład dań bywa zmienny, a w kuchni używamy tych samych sprzętów do wielu potraw, więc możliwe są śladowe ilości innych alergenów. Przy alergii lub nietolerancji zapytaj obsługę przed zamówieniem: <a href="tel:+48721832199">721 832 199</a>.</p>
+  </aside>
+  <div class="strip">
+    <img src="w/dish-zupa.webp" alt="Zupa krem z prażonymi pestkami i chrupiącymi paskami" width="1200" height="900" loading="lazy">
+    <img src="w/dish-kotlet.webp" alt="Kotlet z pieczarkami, ziemniaczki i surówki" width="1200" height="900" loading="lazy">
+    <img src="w/dish-pierogi-new.webp" alt="Pierogi z cebulką i szklanka kompotu" width="1200" height="900" loading="lazy">
+  </div>
+  <div class="after"><p style="max-width:56ch;color:var(--soft);line-height:1.6">Ceny przepisane z tablicy; zawsze obowiązuje ta w barze. Płatność kartą, miejsca w ogródku, piwo i drinki dostępne w barze.</p><div style="display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center"><a class="btn" href="Rezerwacja.html">Zarezerwuj</a><a href="tel:+48721832199">721 832 199</a></div></div>
+</div></main>
+<footer>
+  <span style="font-family:'Young Serif',serif;font-size:22px;color:var(--ink)">Karioka</span>
+  <span>Bar i Agroturystyka · ul. Rudawska 63, 58-533 Karpniki</span>
+  <a href="https://www.facebook.com/karioka.karpniki/" target="_blank" rel="noopener">Facebook</a>
+</footer>
+</body>
+</html>

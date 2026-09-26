@@ -1,0 +1,20 @@
+/* Shared press, hover-transition and focus feedback (Apple-style: respond on pointer-down, interruptible). */
+.btn,.call,nav.top .links a,button,.tab,.slot,a[data-h][style*="border-radius"]{
+  transition:transform .12s cubic-bezier(.2,.8,.2,1),background-color .2s ease,color .2s ease,border-color .2s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+a[data-h][style*="border-radius"]{display:inline-block}
+[data-h]:not([style*="border-radius"]),.links a{transition:color .2s ease,border-color .2s ease}
+/* press feedback: instant on pointer-down, springs back on release (transition is interruptible) */
+.btn:active,.call:active,.tab:active,.slot:active,a[data-h][style*="border-radius"]:active,
+button[data-h]:active,#rprev:active,#rnext:active,.cal-h button:active{transform:scale(.96);transition-duration:.06s}
+.cal-g button:not(:disabled):active{transform:scale(.96)}
+:focus-visible{outline:2px solid #e8894f;outline-offset:3px;border-radius:6px}
+#rquote{touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+#rquote.drag{cursor:grabbing}
+@media(prefers-reduced-motion:reduce){
+  .btn,.call,button,.tab,.slot,a[data-h]{transition:color .15s,background-color .15s,border-color .15s}
+  .btn:active,.call:active,.tab:active,.slot:active,a[data-h]:active,button:active{transform:none;opacity:.8}
+}
+html{-webkit-text-size-adjust:100%}
+button,.btn,.call,.tab,.slot,[role="button"],nav.top a{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+input,select,textarea{font-size:max(16px,1em)}

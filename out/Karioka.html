@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17211b">
+<meta name="color-scheme" content="dark">
+<title>Karioka - Bar i Agroturystyka · Karpniki</title>
+<meta name="description" content="Domowa kuchnia, pięć pokoi i ogród z altaną w Karpnikach, między zamkami a szlakami Rudaw.">
+<link rel="preload" href="fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site.css">
+<style>
+html{scroll-behavior:smooth}
+.mq{background:#e8894f;color:#17211b;padding:18px 0;overflow:hidden}
+.mq-t{display:flex;width:max-content;animation:kmarq 38s linear infinite}
+.mq-g{display:flex;flex:none}
+.mq-g span{padding-right:56px;font:400 30px 'Young Serif',serif;white-space:nowrap}
+.dishes{display:grid;gap:28px 20px;grid-template-columns:1fr}
+.dishes .ph{flex:none}
+@media(min-width:900px){.dishes{grid-template-columns:1.5fr 1fr}.dishes>article:first-child{grid-row:span 2}.dishes>article:first-child .ph{flex:1;aspect-ratio:auto;min-height:380px}}
+body{margin:0;background:#17211b;color:#f3ecdf;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#e8894f;text-decoration:none}
+@media(hover:hover) and (pointer:fine){a:hover{color:#f3ecdf}}
+[id]{scroll-margin-top:84px}
+@keyframes kmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes kfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mq:hover .mq-t,.mq:focus-within .mq-t{animation-play-state:paused}
+@keyframes kfade-rm{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mq-t{animation:none}[style*="kfade"]{animation-name:kfade-rm!important}}
+@media(max-width:480px){.stat-n{font-size:26px!important}}
+@media(min-width:1000px){.stick{position:sticky;top:100px}}
+@media(max-width:760px){#pokoje [style*="font-size:44px"]{font-size:28px!important}.span2{grid-column:auto!important;min-height:280px!important}nav.top{flex-wrap:wrap;gap:10px 16px;padding-block:10px}nav.top .links{order:3;width:100%}}
+@media(hover:hover) and (pointer:fine){[data-h="0"]:hover{background:#f3ecdf !important}}
+@media(hover:hover) and (pointer:fine){[data-h="1"]:hover{background:#f3ecdf !important;color:#17211b !important}}
+@media(hover:hover) and (pointer:fine){[data-h="2"]:hover{border-color:#f3ecdf !important;color:#f3ecdf !important}}
+@media(hover:hover) and (pointer:fine){[data-h="3"]:hover{background:#f3ecdf !important;color:#17211b !important}}
+@media(hover:hover) and (pointer:fine){[data-h="4"]:hover{background:#f3ecdf !important;color:#17211b !important}}
+@media(hover:hover) and (pointer:fine){[data-h="5"]:hover{background:#f3ecdf !important;color:#17211b !important}}
+@media(hover:hover) and (pointer:fine){[data-h="6"]:hover{border-color:#e8894f !important}}
+@media(hover:hover) and (pointer:fine){[data-h="7"]:hover{border-color:#e8894f !important}}
+@media(hover:hover) and (pointer:fine){[data-h="8"]:hover{border-color:#e8894f !important}}
+@media(hover:hover) and (pointer:fine){[data-h="9"]:hover{border-color:#e8894f !important}}
+@media(hover:hover) and (pointer:fine){[data-h="10"]:hover{color:#f3ecdf !important}}
+@media(hover:hover) and (pointer:fine){[data-h="11"]:hover{color:#e8894f !important}}
+@media(hover:hover) and (pointer:fine){[data-h="12"]:hover{color:#e8894f !important}}
+@media(hover:hover) and (pointer:fine){[data-h="13"]:hover{background:#f3ecdf !important;color:#17211b !important}}
+@media(hover:hover) and (pointer:fine){[data-h="14"]:hover{color:#f3ecdf !important}}
+@media(hover:hover) and (pointer:fine){[data-h="15"]:hover{color:#f3ecdf !important}}
+</style>
+<script src="i18n.js"></script>
+<link rel="stylesheet" href="fluid.css">
+</head>
+<body>
+<nav class="top">
+  <a class="brand" href="Karioka.html"><b>Karioka</b><small>Karpniki</small></a>
+  <div class="links">
+    <a href="Menu.html">Menu</a>
+    <a href="Karioka.html#pokoje">Pokoje</a>
+    <a href="Imprezy.html">Imprezy</a>
+    <a href="O-nas.html">O nas</a>
+  </div>
+  <div class="navcta"><a class="tel" href="tel:+48721832199">721 832 199</a><a class="call" href="Rezerwacja.html">Zarezerwuj</a></div>
+</nav>
+
+
+
+
+
+<header id="top" style="position:relative;min-height:min(calc(100dvh - 64px),780px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(24px,4vw,64px);align-items:center;padding:clamp(40px,6vw,88px) clamp(20px,4vw,56px) clamp(32px,4vw,56px);overflow:hidden">
+  <div style="display:flex;flex-direction:column;gap:28px;animation:kfade .3s cubic-bezier(.23,1,.32,1) both">
+    <div style="display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#e8894f;font-weight:600">
+      <span style="width:36px;height:1px;background:#e8894f"></span>Bar i Agroturystyka · Rudawy Janowickie
+    </div>
+    <h1 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(72px,13vw,196px);line-height:.86;letter-spacing:-.035em;color:#f3ecdf">Karioka</h1>
+    <p style="margin:0;max-width:30ch;font-size:clamp(19px,1.7vw,24px);line-height:1.45;color:#d8d0c1;text-wrap:pretty">Domowa kuchnia, pięć pokoi i ogród z altaną w Karpnikach, między zamkami a szlakami Rudaw.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a href="Rezerwacja.html" style="padding:16px 26px;border-radius:999px;background:#e8894f;color:#17211b;font-weight:700;font-size:16px" data-h="1">Zarezerwuj</a>
+      <a href="#pokoje" style="padding:16px 26px;border-radius:999px;border:1px solid rgba(243,236,223,.3);color:#f3ecdf;font-weight:600;font-size:16px" data-h="2">Zobacz pokoje</a>
+    </div>
+  </div>
+  <div style="position:relative;height:clamp(420px,72vh,760px);animation:kfade .35s .05s cubic-bezier(.23,1,.32,1) both">
+    <div style="position:relative;position:absolute;inset:0 0 0 12%;border-radius:220px 220px 20px 20px;overflow:hidden;background:#223028"><img src="w/garden-evening.webp" alt="Wieczorem w ogrodzie Karioki: stoliki w czerwoną kratę, lampiony i światełka pod parasolami" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 50%"></div>
+    <div style="position:relative;position:absolute;left:0;bottom:6%;width:52%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#2b3a31;border:6px solid #17211b"><img src="w/hero-dish.webp" alt="Talerz z pstrągiem, specjalnością baru" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+  </div>
+</header>
+<section aria-label="Oceny gości" style="border-bottom:1px solid rgba(243,236,223,.1)"><div style="max-width:1280px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,4vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Young Serif',serif;font-size:34px;color:#f3ecdf">10/10</span><span style="font-size:13px;color:#a9b3a4;line-height:1.35">ocena gości na Nocowanie.pl</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Young Serif',serif;font-size:34px;color:#f3ecdf">9,2</span><span style="font-size:13px;color:#a9b3a4;line-height:1.35">ocena gości na Noclegi.pl</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px"><span class="stat-n" style="font-family:'Young Serif',serif;font-size:34px;color:#f3ecdf;white-space:nowrap">TOP 100</span><span style="font-size:13px;color:#a9b3a4;line-height:1.35">w Polsce, kategoria Agroturystyka</span></div>
+</div></section>
+
+
+
+<div class="mq" aria-hidden="true"><div class="mq-t"><div class="mq-g"><span>Pierogi</span><span>Pstrąg</span><span>Golonka</span><span>Barszcz</span><span>Kotlet schabowy</span><span>Steki</span><span>Zupy</span><span>Śniadania</span><span>Obiadokolacje</span><span>Ogródek</span></div><div class="mq-g"><span>Pierogi</span><span>Pstrąg</span><span>Golonka</span><span>Barszcz</span><span>Kotlet schabowy</span><span>Steki</span><span>Zupy</span><span>Śniadania</span><span>Obiadokolacje</span><span>Ogródek</span></div></div></div>
+
+
+<section id="kuchnia" style="background:#1f2b24;color:#f3ecdf;padding:clamp(72px,9vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h2 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.025em">Pstrąg, pierogi, kotlet.</h2>
+      </div>
+      <p style="margin:0;font-size:19px;line-height:1.6;color:#c9c1b2;max-width:52ch;text-wrap:pretty">Na dole mieści się bar z domową, polską kuchnią. Goście chwalą przede wszystkim smak i duże porcje, a pstrąg pojawia się niemal w każdej opinii. Można zjeść w środku albo w ogródku, a gościom noclegowym podajemy śniadania i obiadokolacje.</p>
+    </div>
+    <div class="dishes">
+      
+        <article style="display:flex;flex-direction:column;gap:16px">
+          <div class="ph" style="position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#223028"><img src="w/dish-trout.webp" alt="pstrąg" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid rgba(243,236,223,.14);padding-bottom:12px">
+            <h3 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:28px">Pstrąg</h3>
+            <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e8894f;font-weight:700">Specjalność</span>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#c9c1b2">Danie, które goście polecają najczęściej.</p>
+        </article>
+      
+        <article style="display:flex;flex-direction:column;gap:16px">
+          <div class="ph" style="position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#223028"><img src="w/dish-pierogi-new.webp" alt="pierogi" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid rgba(243,236,223,.14);padding-bottom:12px">
+            <h3 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:28px">Pierogi</h3>
+            <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e8894f;font-weight:700">Domowe</span>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#c9c1b2">Klasyka polskiej kuchni, lepiona jak w domu.</p>
+        </article>
+      
+        <article style="display:flex;flex-direction:column;gap:16px">
+          <div class="ph" style="position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#223028"><img src="w/dish-kotlet.webp" alt="kotlet schabowy" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid rgba(243,236,223,.14);padding-bottom:12px">
+            <h3 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:28px">Kotlet schabowy</h3>
+            <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e8894f;font-weight:700">Klasyk</span>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:#c9c1b2">Z frytkami, ziemniaczkami lub kuskusem i surówką.</p>
+        </article>
+      
+    </div>
+    <div style="position:relative;height:clamp(280px,42vw,560px);border-radius:16px;overflow:hidden;background:#2a1d17"><img src="w/bar-counter-staff.webp" width="1306" height="987" alt="Bar w Karioce: lada z butelkami na półkach i szklankami zawieszonymi nad barem, za ladą uśmiechnięta barmanka" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 32px">
+      <span style="font-size:16px;font-weight:500;color:#c9c1b2">Bar czynny codziennie 13:00-19:00</span>
+      <span style="font-size:16px;font-weight:500;color:#c9c1b2">Miejsca w ogródku</span>
+      <span style="font-size:16px;font-weight:500;color:#c9c1b2">Płatność kartą w barze</span>
+      <span style="font-size:16px;font-weight:500;color:#c9c1b2">Dostęp dla wózków</span>
+      <span style="font-size:16px;font-weight:500;color:#c9c1b2">Piwo, drinki, napoje ciepłe i zimne</span>
+    </div>
+    <a href="Menu.html" style="align-self:flex-start;padding:16px 26px;border-radius:999px;border:1px solid rgba(243,236,223,.3);color:#f3ecdf;font-weight:600;font-size:16px">Zobacz całe menu →</a>
+  </div>
+</section>
+
+<section id="pokoje" style="padding:clamp(72px,9vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+    <div class="stick" style="display:flex;flex-direction:column;gap:28px">
+      <h2 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.025em">Pięć pokoi nad barem.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.6;color:#c9c1b2;max-width:46ch;text-wrap:pretty">Przez cały rok mamy 14 miejsc noclegowych w pięciu pokojach 2- i 3-osobowych, z możliwością dostawki. Każdy pokój ma telewizor, Wi-Fi i łazienkę z prysznicem. Goście mają do dyspozycji wspólny aneks kuchenny.</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(243,236,223,.12);border-radius:14px;overflow:hidden">
+        <div style="background:#17211b;padding:20px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'Young Serif',serif;font-size:44px;white-space:nowrap">75-100</span><span style="font-size:13px;color:#a9b3a4">zł za osobę / noc</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid rgba(243,236,223,.14)">
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid rgba(243,236,223,.14)"><span style="font-size:18px;font-weight:600">Pokój 2-osobowy <span style="color:#a9b3a4;font-weight:400">· 3 pokoje</span></span><span style="font-family:'Young Serif',serif;font-size:20px;color:#e8894f">od 160 zł</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid rgba(243,236,223,.14)"><span style="font-size:18px;font-weight:600">Pokój 3-osobowy z dostawką <span style="color:#a9b3a4;font-weight:400">· 2 pokoje</span></span><span style="font-family:'Young Serif',serif;font-size:20px;color:#e8894f">zapytaj</span></div>
+      </div>
+      <a href="Rezerwacja.html" style="align-self:flex-start;padding:16px 26px;border-radius:999px;background:#e8894f;color:#17211b;font-weight:700;font-size:16px" data-h="3">Zarezerwuj</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#223028"><img src="w/room-main.webp" alt="Pokój na poddaszu z dwoma łóżkami, stolikiem i lampkami" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px">
+        <div style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#223028"><img src="w/room-twin.webp" alt="Jasny pokój 2-osobowy z dwoma łóżkami i oknem" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div style="position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#223028"><img src="w/room-kitchen.webp" alt="Wspólny aneks kuchenny" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px;padding:28px;border-radius:16px;background:#1f2b24">
+        
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e8894f;font-weight:700">W pokoju</span>
+            <span style="font-size:15px;line-height:1.6;color:#d8d0c1">Telewizor, Wi-Fi, szafa, łazienka z prysznicem, ręczniki, suszarka do włosów</span>
+          </div>
+        
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e8894f;font-weight:700">Aneks kuchenny</span>
+            <span style="font-size:15px;line-height:1.6;color:#d8d0c1">Kuchenka, lodówka, mikrofala, czajnik, naczynia, przyprawy</span>
+          </div>
+        
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e8894f;font-weight:700">Wyżywienie</span>
+            <span style="font-size:15px;line-height:1.6;color:#d8d0c1">Śniadania i obiadokolacje na zamówienie</span>
+          </div>
+        
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e8894f;font-weight:700">Dla dzieci</span>
+            <span style="font-size:15px;line-height:1.6;color:#d8d0c1">Łóżeczko, wanienka, gry planszowe</span>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ogrod" style="background:#1f2b24;color:#f3ecdf;padding:clamp(72px,9vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
+    <div style="display:flex;flex-direction:column;gap:18px;max-width:900px">
+      <h2 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.025em">Wieczór przy ognisku, dzieci na huśtawce.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+      <div class="span2" style="grid-column:span 2;min-height:420px;border-radius:16px;overflow:hidden;background:#223028;position:relative"><img src="w/garden-1.webp" alt="ogród z altaną" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="flex:1;padding:28px;border-radius:16px;background:#17211b;color:#f3ecdf;display:flex;flex-direction:column;gap:12px;justify-content:flex-end">
+          <span style="font-family:'Young Serif',serif;font-size:30px;line-height:1.1">Zwierzęta mile widziane</span>
+          <span style="font-size:16px;line-height:1.5;color:#c9c1b2">Dopłata 20 zł za dobę.</span>
+        </div>
+        <div style="flex:1;padding:28px;border-radius:16px;background:#e8894f;color:#17211b;display:flex;flex-direction:column;gap:12px;justify-content:flex-end">
+          <span style="font-family:'Young Serif',serif;font-size:30px;line-height:1.1">Przyjęcia i spotkania</span>
+          <span style="font-size:16px;line-height:1.5">Organizujemy komunie, spotkania integracyjne oraz pikniki i imprezy plenerowe z grillem i ogniskiem.</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px">
+      <div style="position:relative;height:clamp(240px,30vw,400px);border-radius:16px;overflow:hidden;background:#223028"><img src="w/playground.webp" alt="Plac zabaw w ogrodzie Karioki: niebieska zjeżdżalnia, drewniana konstrukcja i wiszący fotel" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 60%"></div>
+      <div style="position:relative;height:clamp(240px,30vw,400px);border-radius:16px;overflow:hidden;background:#223028"><img src="w/patio-table.webp" alt="Stolik w czerwoną kratę pod parasolem na patio przy wejściu do baru" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+      <div style="position:relative;height:clamp(240px,30vw,400px);border-radius:16px;overflow:hidden;background:#223028"><img src="w/garden-pond.webp" width="1448" height="1086" alt="Oczko wodne w ogrodzie Karioki z liliami wodnymi i drewnianym mostkiem" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+      <div style="position:relative;height:clamp(240px,30vw,400px);border-radius:16px;overflow:hidden;background:#223028;grid-column:1/-1"><img src="w/front-lavender.webp" alt="Front Karioki z parasolami i rabatą lawendy" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0;border-top:1px solid rgba(243,236,223,.14)">
+      
+        <div style="padding:24px 24px 24px 0;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:24px">Altana i ogród</span>
+          <span style="font-size:15px;line-height:1.55;color:#c9c1b2">Klimatyczny ogród z miejscami do relaksu.</span>
+        </div>
+      
+        <div style="padding:24px 24px 24px 0;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:24px">Grill i ognisko</span>
+          <span style="font-size:15px;line-height:1.55;color:#c9c1b2">Na letnie wieczory pod gołym niebem.</span>
+        </div>
+      
+        <div style="padding:24px 24px 24px 0;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:24px">Plac zabaw</span>
+          <span style="font-size:15px;line-height:1.55;color:#c9c1b2">Huśtawka i piaskownica dla najmłodszych.</span>
+        </div>
+      
+        <div style="padding:24px 24px 24px 0;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:24px">Oczko wodne</span>
+          <span style="font-size:15px;line-height:1.55;color:#c9c1b2">Część rekreacyjna z oczkiem wodnym w ogrodzie.</span>
+        </div>
+      
+        <div style="padding:24px 24px 24px 0;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:24px">Parking</span>
+          <span style="font-size:15px;line-height:1.55;color:#c9c1b2">5 bezpłatnych miejsc dla gości.</span>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="opinie" style="padding:clamp(72px,9vw,140px) clamp(20px,4vw,56px);background:#17211b">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <h2 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.025em">„Zdecydowanie polecamy!”</h2>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button id="rprev" aria-label="Poprzednia opinia" style="width:52px;height:52px;border-radius:50%;border:1px solid rgba(243,236,223,.3);background:transparent;color:#f3ecdf;font-size:20px;cursor:pointer" data-h="4">←</button>
+        <button id="rnext" aria-label="Następna opinia" style="width:52px;height:52px;border-radius:50%;border:1px solid rgba(243,236,223,.3);background:transparent;color:#f3ecdf;font-size:20px;cursor:pointer" data-h="5">→</button>
+      </div>
+    </div>
+    <div style="min-height:300px;display:flex;flex-direction:column;justify-content:center;gap:28px;padding:clamp(28px,5vw,64px);border-radius:24px;background:#1f2b24;border:1px solid rgba(243,236,223,.08)">
+      <div style="display:flex;align-items:center;gap:14px">
+        <span style="color:#e8894f;font-size:22px;letter-spacing:4px">★★★★★</span>
+        <span style="font-size:14px;color:#a9b3a4"><span id="rmeta">10/10 · wyjazd w parze</span></span>
+      </div>
+      <div id="rquote"><blockquote style="margin:0;font-family:'Young Serif',serif;font-size:clamp(26px,3.2vw,42px);line-height:1.25;letter-spacing:-.01em;text-wrap:balance">„Jeżeli szukasz kameralnego i spokojnego miejsca, z dobrą kuchnią i wspaniałą obsługą to zdecydowanie polecam.”</blockquote></div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span style="font-size:18px;font-weight:700"><span id="rname">Katarzyna Zabieglińska</span></span>
+        <span style="font-size:14px;color:#a9b3a4">Opinia z Nocowanie.pl</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px">
+      
+        <button data-k="0" style="text-align:left;padding:16px 18px;border-radius:12px;background:transparent;border:1px solid rgba(243,236,223,.14);color:#f3ecdf;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;gap:6px" data-h="6">
+          <span data-on ><span style="height:3px;width:40px;background:#e8894f;border-radius:2px"></span></span>
+          <span data-off hidden><span style="height:3px;width:40px;background:rgba(243,236,223,.18);border-radius:2px"></span></span>
+          <span style="font-size:15px;font-weight:600">Katarzyna Zabieglińska</span>
+          <span style="font-size:13px;color:#a9b3a4">wyjazd w parze</span>
+        </button>
+      
+        <button data-k="1" style="text-align:left;padding:16px 18px;border-radius:12px;background:transparent;border:1px solid rgba(243,236,223,.14);color:#f3ecdf;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;gap:6px" data-h="7">
+          <span data-on hidden><span style="height:3px;width:40px;background:#e8894f;border-radius:2px"></span></span>
+          <span data-off ><span style="height:3px;width:40px;background:rgba(243,236,223,.18);border-radius:2px"></span></span>
+          <span style="font-size:15px;font-weight:600">Janek i Magda</span>
+          <span style="font-size:13px;color:#a9b3a4">wyjazd w parze</span>
+        </button>
+      
+        <button data-k="2" style="text-align:left;padding:16px 18px;border-radius:12px;background:transparent;border:1px solid rgba(243,236,223,.14);color:#f3ecdf;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;gap:6px" data-h="8">
+          <span data-on hidden><span style="height:3px;width:40px;background:#e8894f;border-radius:2px"></span></span>
+          <span data-off ><span style="height:3px;width:40px;background:rgba(243,236,223,.18);border-radius:2px"></span></span>
+          <span style="font-size:15px;font-weight:600">Monika Antczak</span>
+          <span style="font-size:13px;color:#a9b3a4">wyjazd rodzinny</span>
+        </button>
+      
+        <button data-k="3" style="text-align:left;padding:16px 18px;border-radius:12px;background:transparent;border:1px solid rgba(243,236,223,.14);color:#f3ecdf;cursor:pointer;font-family:inherit;display:flex;flex-direction:column;gap:6px" data-h="9">
+          <span data-on hidden><span style="height:3px;width:40px;background:#e8894f;border-radius:2px"></span></span>
+          <span data-off ><span style="height:3px;width:40px;background:rgba(243,236,223,.18);border-radius:2px"></span></span>
+          <span style="font-size:15px;font-weight:600">Alicja</span>
+          <span style="font-size:13px;color:#a9b3a4">wyjazd w parze</span>
+        </button>
+      
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;color:#c9c1b2;padding-top:24px;border-top:1px solid rgba(243,236,223,.12)">
+      <span><strong style="color:#f3ecdf">10/10</strong> na Nocowanie.pl · pokoje, łazienki, obsługa, wyżywienie, lokalizacja</span>
+      <span><strong style="color:#f3ecdf">9,2/10</strong> na Noclegi.pl · 14 opinii</span>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Karioka+Rudawska+63+Karpniki" target="_blank" rel="noopener" style="color:#e8894f;font-weight:600" data-h="10">Opinie i zdjęcia w Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<section id="okolica" style="background:#1f2b24;color:#f3ecdf;padding:clamp(72px,9vw,120px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h2 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-.025em">Blisko na szlaki.</h2>
+      <p style="margin:0;font-size:19px;line-height:1.6;max-width:44ch">Karpniki leżą w Rudawach Janowickich, w Kotlinie Jeleniogórskiej. Dobre miejsce wypadowe na piesze wędrówki i zwiedzanie zamków.</p>
+      <div style="position:relative;margin-top:12px;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:#223028"><img src="w/castle.jpg" alt="zamek w Karpnikach" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><a href="https://commons.wikimedia.org/wiki/File:2016_Zamek_w_Karpnikach_1.jpg" target="_blank" rel="noopener" style="position:absolute;right:8px;bottom:8px;font-size:11px;padding:3px 8px;border-radius:999px;background:rgba(23,33,27,.72);color:#f3ecdf;text-decoration:none">Jacek Halicki, Wikimedia Commons, CC BY 3.0</a></div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:clamp(22px,2.4vw,30px)">Zamek w Karpnikach (Fischbach)</span>
+          <span style="font-size:15px;font-weight:600;white-space:nowrap">w Karpnikach</span>
+        </div>
+      
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:clamp(22px,2.4vw,30px)">Zamek Bolczów</span>
+          <span style="font-size:15px;font-weight:600;white-space:nowrap">3,1 km</span>
+        </div>
+      
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:clamp(22px,2.4vw,30px)">Szlaki Rudaw Janowickich</span>
+          <span style="font-size:15px;font-weight:600;white-space:nowrap">z miejsca</span>
+        </div>
+      
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px solid rgba(243,236,223,.14)">
+          <span style="font-family:'Young Serif',serif;font-size:clamp(22px,2.4vw,30px)">Jelenia Góra, centrum</span>
+          <span style="font-size:15px;font-weight:600;white-space:nowrap">ok. 13,6 km</span>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="info" style="background:#17211b;color:#f3ecdf;padding:clamp(72px,9vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h2 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.95;letter-spacing:-.025em">Zanim przyjedziesz.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));column-gap:48px;row-gap:36px;padding-top:36px;border-top:1px solid rgba(243,236,223,.3)">
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Zameldowanie</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">14:00 - 21:00</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Wymeldowanie</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">Do 11:00. Jeśli pokój jest wolny, dobę można przedłużyć bez dopłaty.</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Recepcja</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">13:00 - 21:00</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Płatność za nocleg</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">Gotówka lub przelew, w złotówkach</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Zadatek</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">30% kwoty za pobyt, wpłacany w ciągu 4 dni od rezerwacji</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Rezygnacja</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">Bez opłaty za rezygnację z rezerwacji</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Zwierzęta</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">Mile widziane, 20 zł za dobę</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Palenie</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">Zakaz palenia w budynku, wyznaczone miejsca na zewnątrz</span>
+        </div>
+      
+        <div style="display:flex;flex-direction:column;gap:6px;padding:0">
+          <span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:700">Opłata klimatyczna</span>
+          <span style="font-size:18px;line-height:1.45;font-weight:500">Brak</span>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="background:#1f2b24;padding:clamp(72px,9vw,140px) clamp(20px,4vw,56px) 48px">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:48px;align-items:stretch">
+      <div style="display:flex;flex-direction:column;gap:32px">
+        <h2 style="margin:0;font-family:'Young Serif',serif;font-weight:400;font-size:clamp(48px,7vw,104px);line-height:.92;letter-spacing:-.03em">Do zobaczenia w Karpnikach.</h2>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <a href="tel:+48721832199" style="display:flex;flex-direction:column;gap:2px;color:#f3ecdf" data-h="11"><span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:600">Telefon komórkowy</span><span style="font-family:'Young Serif',serif;font-size:clamp(30px,3.4vw,44px)">721 832 199</span></a>
+          <a href="tel:+48757137227" style="display:flex;flex-direction:column;gap:2px;color:#f3ecdf" data-h="12"><span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:600">Telefon stacjonarny</span><span style="font-family:'Young Serif',serif;font-size:clamp(30px,3.4vw,44px)">75 713 72 27</span></a>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b3a4;font-weight:600">Adres</span><span style="font-size:20px;line-height:1.5">ul. Rudawska 63<br>58-533 Karpniki</span></div>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Rudawska+63,+58-533+Karpniki" target="_blank" rel="noopener" style="align-self:flex-start;padding:16px 26px;border-radius:999px;background:#e8894f;color:#17211b;font-weight:700;font-size:16px" data-h="13">Wyznacz trasę</a>
+      </div>
+      <div style="min-height:460px;border-radius:24px;overflow:hidden;background:#223028;border:1px solid rgba(243,236,223,.1)">
+        <iframe title="Mapa - Karioka, Rudawska 63, Karpniki" src="https://www.google.com/maps?q=Rudawska+63,+58-533+Karpniki&amp;z=14&amp;output=embed" style="width:100%;height:100%;min-height:460px;border:0;filter:grayscale(.35) contrast(1.05)" loading="lazy"></iframe>
+      </div>
+    </div>
+    <footer style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px;padding-top:28px;border-top:1px solid rgba(243,236,223,.12);font-size:14px;color:#a9b3a4">
+      <span style="font-family:'Young Serif',serif;font-size:22px;color:#f3ecdf">Karioka</span>
+      <span>Bar i Agroturystyka · ul. Rudawska 63, 58-533 Karpniki</span>
+      <span>Rozmawiamy po polsku i angielsku</span>
+      <a href="O-nas.html" style="color:#e8894f;font-weight:600" data-h="14">O nas</a>
+      <a href="https://www.facebook.com/karioka.karpniki/" target="_blank" rel="noopener" style="color:#e8894f;font-weight:600" data-h="15">Facebook</a>
+    </footer>
+  </div>
+</section>
+
+
+
+
+<script>
+(function(){var R=[{"name":"Katarzyna Zabieglińska","trip":"wyjazd w parze","score":10,"text":"Jeżeli szukasz kameralnego i spokojnego miejsca, z dobrą kuchnią i wspaniałą obsługą to zdecydowanie polecam."},{"name":"Janek i Magda","trip":"wyjazd w parze","score":10,"text":"Super miejsce, bardzo dobra kuchnia, klimatyczny ogród z miejscami do relaksu, Wspaniali właściciele. Zdecydowanie polecamy!!"},{"name":"Monika Antczak","trip":"wyjazd rodzinny","score":10,"text":"Lokalizacja super - blisko na szlaki. Jedzenie przepyszne, pokoje czyste. Jako miejsce wypadowe lub do odpoczynku w ogrodzie. Pełen relaks, cisza i przyroda."},{"name":"Alicja","trip":"wyjazd w parze","score":10,"text":"Polecam z całego serca agroturystykę. Pokoje bardzo czyste, zadbane. Można zregenerować się po całym dniu. Miejsce przyjazne dla alergików. Dodatkowo na dole jest bar, w którym można zjeść pyszne jedzenie w przystępnej cenie."}],i=0,t;
+var Q=document.getElementById('rquote'),rm=matchMedia('(prefers-reduced-motion:reduce)'),anim=null,busy=0;
+function paint(){var r=R[i];Q.firstChild.textContent='„'+r.text+'”';
+document.getElementById('rmeta').textContent=r.score+'/10 · '+r.trip;document.getElementById('rname').textContent=r.name;
+document.querySelectorAll('[data-k]').forEach(function(b){var on=+b.dataset.k===i;b.querySelector('[data-on]').hidden=!on;b.querySelector('[data-off]').hidden=on})}
+function cur(){var m=new DOMMatrixReadOnly(getComputedStyle(Q).transform);return{x:m.m41,o:+getComputedStyle(Q).opacity}}
+/* Interruptible: a new request cancels the running animation and starts from its live on-screen state. */
+function set(k,dir,vx){var n=(k+R.length)%R.length;if(n===i&&!vx)return;var d=dir||(k>i?1:-1),tok=++busy;
+var c=cur();if(anim)anim.cancel();
+if(rm.matches){i=n;paint();Q.style.opacity=Q.style.transform='';anim=Q.animate([{opacity:0},{opacity:1}],{duration:150});return}
+anim=Q.animate([{transform:'translateX('+c.x+'px)',opacity:c.o},{transform:'translateX('+(-d*32)+'px)',opacity:0}],{duration:120,easing:'cubic-bezier(.23,1,.32,1)',fill:'forwards'});
+anim.onfinish=function(){if(tok!==busy)return;i=n;paint();var old=anim;
+anim=Q.animate([{transform:'translateX('+(d*32)+'px)',opacity:0},{transform:'translateX(0)',opacity:1}],{duration:260,easing:'cubic-bezier(.23,1,.32,1)'});old.cancel();anim.onfinish=function(){Q.style.transform=Q.style.opacity=''}}}
+function go(k){set(k);clearInterval(t);if(!rm.matches)t=setInterval(function(){set(i+1,1)},7000)}
+document.getElementById('rprev').onclick=function(){go(i-1)};document.getElementById('rnext').onclick=function(){go(i+1)};
+document.querySelectorAll('[data-k]').forEach(function(b){b.onclick=function(){go(+b.dataset.k)}});
+/* Swipe: 1:1 tracking with grab offset, velocity-projected commit, rubber-banded spring-back. */
+var sx=0,lx=0,lt=0,v=0,down=0;
+Q.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'&&e.button)return;down=1;sx=lx=e.clientX;lt=e.timeStamp;v=0;busy++;if(anim){var c=cur();anim.cancel();sx-=c.x}Q.setPointerCapture(e.pointerId);Q.classList.add('drag');clearInterval(t)});
+Q.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx,dt=e.timeStamp-lt;if(dt>0)v=.8*v+.2*((e.clientX-lx)/dt*1000);lx=e.clientX;lt=e.timeStamp;
+Q.style.transform='translateX('+dx*.6+'px)';Q.style.opacity=Math.max(.35,1-Math.abs(dx)/400)});
+function end(e){if(!down)return;down=0;Q.classList.remove('drag');var dx=e.clientX-sx,proj=dx+v*.25;
+if(Math.abs(proj)>70){var d=proj<0?1:-1;Q.style.transform=Q.style.opacity='';i=(i+d+R.length)%R.length;paint();anim=Q.animate([{transform:'translateX('+(rm.matches?0:d*36)+'px)',opacity:.2},{transform:'translateX(0)',opacity:1}],{duration:260,easing:'cubic-bezier(.23,1,.32,1)'});anim.onfinish=function(){Q.style.transform=Q.style.opacity=''}}
+else{var f=dx*.6,o=+Q.style.opacity||1;Q.style.transform=Q.style.opacity='';anim=Q.animate([{transform:'translateX('+f+'px)',opacity:o},{transform:'translateX(0)',opacity:1}],{duration:rm.matches?1:300,easing:'cubic-bezier(.34,1.4,.5,1)'})}
+if(!rm.matches)t=setInterval(function(){set(i+1,1)},7000)}
+Q.addEventListener('pointerup',end);Q.addEventListener('pointercancel',end);
+go(0)})();
+</script>
+</body>
+</html>

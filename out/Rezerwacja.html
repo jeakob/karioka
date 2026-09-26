@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17211b">
+<meta name="color-scheme" content="dark">
+<title>Rezerwacja - Karioka · Karpniki</title>
+<link rel="preload" href="fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site.css">
+<!-- Litepicker: open source (MIT) date-range picker -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker@2.0.12/dist/css/litepicker.css" integrity="sha384-fcpDiVI0TDx8mYG1bVKKGTM+E7cSE50LVyMaaBkegJuyXG1DOhC/DNsShtuPlo1L" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/litepicker@2.0.12/dist/litepicker.js" integrity="sha384-TwHJTusQtbcoEHJcrF5aeo0MHBgj8lt8onFRrG7wKk8Q/LG9EphkEsqNRiVWzIP9" crossorigin="anonymous"></script>
+<style>
+html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#17211b;color:#f3ecdf;font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#e8894f;text-decoration:none}@media(hover:hover) and (pointer:fine){ a:hover{color:#f3ecdf}}
+h1,h2,h3{font-family:'Young Serif',serif;font-weight:400;margin:0}
+p{margin:0;text-wrap:pretty}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#e8894f}
+.btn{display:inline-block;padding:16px 26px;border-radius:999px;background:#e8894f;color:#17211b;font-weight:700;font-size:16px;border:0;cursor:pointer;font-family:inherit}
+@media(hover:hover) and (pointer:fine){.btn:hover{background:#f3ecdf;color:#17211b}}
+.pad{padding:clamp(48px,7vw,100px) clamp(20px,4vw,56px)}
+.wrap{max-width:1100px;margin:0 auto}
+.tabs{display:inline-flex;gap:6px;padding:6px;border-radius:999px;background:#1f2b24;border:1px solid rgba(243,236,223,.1)}
+.tab{padding:12px 24px;border-radius:999px;border:0;background:transparent;color:#d8d0c1;font:600 15px 'Hanken Grotesk',sans-serif;cursor:pointer}
+.tab[aria-selected=true]{background:#e8894f;color:#17211b}
+.card{border-radius:24px;background:#1f2b24;border:1px solid rgba(243,236,223,.08);padding:clamp(20px,4vw,44px)}
+label{display:flex;flex-direction:column;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#a9b3a4;font-weight:700}
+input,select,textarea{font:500 17px 'Hanken Grotesk',sans-serif;padding:14px 16px;border-radius:12px;border:1px solid rgba(243,236,223,.2);background:#17211b;color:#f3ecdf;letter-spacing:0;text-transform:none;width:100%;box-sizing:border-box}
+input:focus,select:focus,textarea:focus{outline:2px solid #e8894f;outline-offset:1px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+::placeholder{color:#a9b3a4;opacity:1}
+.err{color:#ffb59a}
+[aria-invalid=true]{border-color:#ffb59a}
+.note{font-size:14px;color:#a9b3a4;line-height:1.55}
+/* Litepicker dark tweaks */
+:root{--litepicker-container-months-color-bg:#1f2b24;--litepicker-month-header-color:#f3ecdf;--litepicker-month-weekday-color:#a9b3a4;--litepicker-day-color:#f3ecdf;--litepicker-day-color-hover:#e8894f;--litepicker-is-start-color-bg:#e8894f;--litepicker-is-end-color-bg:#e8894f;--litepicker-is-in-range-color:#4a3a2a;--litepicker-button-prev-month-color:#f3ecdf;--litepicker-button-next-month-color:#f3ecdf;--litepicker-is-locked-color:#5a6560}
+.litepicker{font-family:'Hanken Grotesk',sans-serif}
+[hidden]{display:none!important}
+
+.tb{display:grid;grid-template-columns:minmax(200px,.8fr) 1.6fr minmax(180px,.7fr);border-radius:20px;background:#17211b;border:1px solid rgba(243,236,223,.1);overflow:hidden}
+.tb>div{padding:clamp(18px,2.5vw,32px)}
+.tb>div+div{border-left:1px solid rgba(243,236,223,.1)}
+.tb h3{font-size:28px;margin:6px 0 10px}
+.tb .meta{display:flex;flex-direction:column;gap:12px;margin-top:22px;font-size:15px;color:#d8d0c1}
+.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;font:400 22px 'Young Serif',serif}
+.cal-h span{color:#a9b3a4}
+.cal-h button{width:36px;height:36px;border-radius:50%;border:1px solid rgba(243,236,223,.2);background:transparent;color:#f3ecdf;cursor:pointer;font-size:16px}
+@media(hover:hover) and (pointer:fine){.cal-h button:hover{background:#e8894f;color:#17211b;border-color:#e8894f}}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+.cal-g .dow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#a9b3a4;padding-bottom:8px}
+.cal-g button{aspect-ratio:1;border-radius:10px;border:0;background:#26342c;color:#f3ecdf;font:600 15px 'Hanken Grotesk',sans-serif;cursor:pointer}
+@media(hover:hover) and (pointer:fine){.cal-g button:hover:not(:disabled){background:#33453a}}
+.cal-g button:disabled{background:transparent;color:#5d6a60;cursor:default}
+.cal-g button[aria-pressed=true]{background:#e8894f;color:#17211b}
+.slots{display:flex;flex-direction:column;gap:8px;max-height:380px;overflow:auto}
+.slots h4{margin:0 0 8px;font:400 18px 'Young Serif',serif}
+.slot{padding:12px;border-radius:12px;border:1px solid rgba(243,236,223,.2);background:transparent;color:#f3ecdf;font:600 15px 'Hanken Grotesk',sans-serif;cursor:pointer}
+@media(hover:hover) and (pointer:fine){.slot:hover{border-color:#e8894f}}
+.slot[aria-pressed=true]{background:#e8894f;border-color:#e8894f;color:#17211b}
+@media(max-width:860px){.tb{grid-template-columns:1fr}.tb>div+div{border-left:0;border-top:1px solid rgba(243,236,223,.1)}.slots{max-height:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr))}.slots h4{grid-column:1/-1}}
+</style>
+<script src="i18n.js"></script>
+<link rel="stylesheet" href="fluid.css">
+</head>
+<body>
+<nav class="top">
+  <a class="brand" href="Karioka.html"><b>Karioka</b><small>Karpniki</small></a>
+  <div class="links">
+    <a href="Menu.html">Menu</a>
+    <a href="Karioka.html#pokoje">Pokoje</a>
+    <a href="Imprezy.html">Imprezy</a>
+    <a href="O-nas.html">O nas</a>
+  </div>
+  <div class="navcta"><a class="tel" href="tel:+48721832199">721 832 199</a><a class="call" href="Rezerwacja.html">Zarezerwuj</a></div>
+</nav>
+
+<main class="pad">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:36px">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span class="eyebrow">Rezerwacja</span>
+      <h1 style="font-size:clamp(44px,7vw,96px);line-height:.95;letter-spacing:-.03em">Zarezerwuj pokój lub stolik.</h1>
+      <p style="font-size:19px;line-height:1.6;color:#c9c1b2;max-width:56ch">Wybierz termin, a odezwiemy się, żeby potwierdzić. Zadatek to 30% kwoty za pobyt, warunki rezygnacji podajemy przy potwierdzeniu. Wolisz rozmowę? Zadzwoń: <a href="tel:+48721832199">721 832 199</a>.</p>
+    </div>
+
+    <div role="tablist" class="tabs" aria-label="Rodzaj rezerwacji">
+      <button class="tab" role="tab" id="t-room" aria-selected="true" aria-controls="p-room">Pokój</button>
+      <button class="tab" role="tab" id="t-table" aria-selected="false" aria-controls="p-table">Stolik</button>
+    </div>
+
+    <!-- ROOM: Litepicker (MIT) + prefilled e-mail. No backend needed. -->
+    <section id="p-room" role="tabpanel" aria-labelledby="t-room" class="card">
+      <form id="room-form" style="display:flex;flex-direction:column;gap:22px" novalidate>
+        <div class="row">
+          <label>Przyjazd - wyjazd
+            <input id="range" type="text" readonly placeholder="Wybierz daty" required>
+          </label>
+          <label>Liczba osób
+            <select id="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9-14</option></select>
+          </label>
+          <label>Zwierzę (+20 zł / doba)
+            <select id="pet"><option value="nie">Nie</option><option value="tak">Tak</option></select>
+          </label>
+        </div>
+        <div class="row">
+          <label>Imię i nazwisko<input id="name" type="text" autocomplete="name" required></label>
+          <label>Telefon<input id="phone" type="tel" autocomplete="tel" required></label>
+        </div>
+        <label>Uwagi (opcjonalnie)<textarea id="msg" rows="3" placeholder="np. dostawka, łóżeczko dla dziecka, późny przyjazd"></textarea></label>
+        <div id="summary" class="note" aria-live="polite">Wybierz daty w kalendarzu.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+          <button class="btn" type="submit">Wyślij zapytanie</button>
+          <span class="note">Otworzy się Twoja poczta z gotową wiadomością do Karioki.</span>
+        </div>
+      </form>
+    </section>
+
+    <!-- TABLE: Cal.com inline embed (open source scheduling, free hosted plan) -->
+    <section id="p-table" role="tabpanel" aria-labelledby="t-table" class="card" hidden>
+      <div class="tb">
+        <div>
+          <span class="eyebrow">Stolik</span>
+          <h3>Rezerwacja stolika</h3>
+          <p class="note">Wybierz dzień i godzinę, a potwierdzimy telefonicznie. Bar czynny 13:00-19:00.</p>
+          <div class="meta">
+            <span>2 godziny</span>
+            <span><select id="tguests" style="width:auto;padding:6px 10px;font-size:16px"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option></select> osób</span>
+            <span>ul. Rudawska 63, Karpniki</span>
+          </div>
+          <p class="note" style="margin-top:22px">Wolisz zadzwonić? <a href="tel:+48721832199">721 832 199</a></p>
+        </div>
+        <div>
+          <div class="cal-h"><div id="cal-title"></div><div><button type="button" id="cal-prev" aria-label="Poprzedni miesiąc">‹</button> <button type="button" id="cal-next" aria-label="Następny miesiąc">›</button></div></div>
+          <div class="cal-g" id="cal-grid"></div>
+        </div>
+        <div>
+          <div class="slots" id="slots"></div>
+          <button class="btn" id="t-send" type="button" style="margin-top:16px;width:100%;padding:14px" disabled>Zarezerwuj</button>
+        </div>
+      </div>
+    </section>
+
+    
+  </div>
+</main>
+
+<footer style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:28px clamp(20px,4vw,56px);border-top:1px solid rgba(243,236,223,.12);font-size:14px;color:#a9b3a4">
+  <span style="font-family:'Young Serif',serif;font-size:22px;color:#f3ecdf">Karioka</span>
+  <span>Bar i Agroturystyka · ul. Rudawska 63, 58-533 Karpniki</span>
+  <a href="https://www.facebook.com/karioka.karpniki/" target="_blank" rel="noopener">Facebook</a>
+</footer>
+
+<script>
+(function(){
+  var EMAIL='agrokarioka@poczta.onet.pl';
+  var CAL_LINK='rick/get-rick-rolled'; // TODO: replace with your own Cal.com link, e.g. 'karioka/stolik'
+
+  // Tabs
+  var tabs=[['t-room','p-room'],['t-table','p-table']], calLoaded=false;
+  tabs.forEach(function(pair){
+    document.getElementById(pair[0]).addEventListener('click',function(){
+      tabs.forEach(function(q){
+        var on=q[0]===pair[0];
+        document.getElementById(q[0]).setAttribute('aria-selected',on);
+        document.getElementById(q[1]).hidden=!on;
+      });
+      
+    });
+  });
+
+  // Room dates
+  var start=null,end=null,fmt=function(d){return d.format('DD.MM.YYYY')};
+  var summary=document.getElementById('summary');
+  function nights(){return Math.round((end.dateInstance-start.dateInstance)/86400000)}
+  function update(){
+    summary.className='note';document.getElementById('range').removeAttribute('aria-invalid');
+    if(!start||!end){summary.textContent='Wybierz daty w kalendarzu.';return}
+    var n=nights(),g=parseInt(document.getElementById('guests').value,10)||2;
+    summary.textContent=n+' '+(n===1?'noc':(n<5?'noce':'nocy'))+', '+fmt(start)+' - '+fmt(end)+'. Cena zwykle 75-100 zł za osobę za noc, do potwierdzenia przez nas.';
+  }
+  var picker=new Litepicker({
+    element:document.getElementById('range'),singleMode:false,numberOfMonths:2,numberOfColumns:2,
+    minDate:new Date(),minDays:2,lang:window.KARIOKA_LANG==='en'?'en-US':'pl-PL',format:'DD.MM.YYYY',delimiter:' - ',autoApply:true,
+    setup:function(p){p.on('selected',function(s,e){start=s;end=e;update()})}
+  });
+  window.addEventListener('kariokalang',function(e){picker.setOptions({lang:e.detail==='en'?'en-US':'pl-PL'})});
+  document.getElementById('guests').addEventListener('change',update);
+
+  document.getElementById('room-form').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim();
+    if(!start||!end){summary.className='note err';summary.textContent='Najpierw wybierz daty pobytu.';document.getElementById('range').setAttribute('aria-invalid','true');document.getElementById('range').focus();return}
+    ['name','phone'].forEach(function(id){var el=document.getElementById(id);if(el.value.trim())el.removeAttribute('aria-invalid');else el.setAttribute('aria-invalid','true')});
+    if(!name||!phone){summary.className='note err';summary.textContent='Podaj imię i telefon, żebyśmy mogli potwierdzić rezerwację.';document.getElementById(name?'phone':'name').focus();return}
+    var body=['Dzień dobry,','','chciał(a)bym zapytać o pokój.','',
+      'Przyjazd: '+fmt(start),'Wyjazd: '+fmt(end)+' ('+nights()+' n.)',
+      'Liczba osób: '+document.getElementById('guests').value,
+      'Zwierzę: '+document.getElementById('pet').value,
+      'Uwagi: '+(document.getElementById('msg').value.trim()||'-'),'',
+      'Imię i nazwisko: '+name,'Telefon: '+phone].join('\n');
+    location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Zapytanie o pokój '+fmt(start)+' - '+fmt(end))+'&body='+encodeURIComponent(body);
+  });
+
+
+  // Table booking widget (placeholder availability)
+  (function(){
+    var M=['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'],
+        D=['pon','wt','śr','czw','pt','sob','ndz'],
+        today=new Date();today.setHours(0,0,0,0);
+    var view=new Date(today.getFullYear(),today.getMonth(),1),selDay=null,selTime=null;
+    var grid=document.getElementById('cal-grid'),slots=document.getElementById('slots'),send=document.getElementById('t-send');
+    var taken=function(d,h){return (d.getDate()*7+h*3)%5===0}; // placeholder "busy" slots
+    function drawCal(){
+      document.getElementById('cal-title').innerHTML=M[view.getMonth()]+' <span>'+view.getFullYear()+'</span>';
+      grid.innerHTML=D.map(function(d){return '<div class="dow">'+d+'</div>'}).join('');
+      var off=(view.getDay()+6)%7,n=new Date(view.getFullYear(),view.getMonth()+1,0).getDate();
+      for(var i=0;i<off;i++)grid.appendChild(document.createElement('span'));
+      for(var d=1;d<=n;d++){
+        var dt=new Date(view.getFullYear(),view.getMonth(),d),b=document.createElement('button');
+        b.type='button';b.textContent=d;b.disabled=dt<today;
+        b.setAttribute('aria-pressed',!!selDay&&+selDay===+dt);
+        (function(dt){b.onclick=function(){selDay=dt;selTime=null;drawCal();drawSlots();var p=grid.querySelector('[aria-pressed="true"]');if(p)p.focus()}})(dt);
+        grid.appendChild(b);
+      }
+    }
+    function drawSlots(){
+      send.disabled=!(selDay&&selTime);
+      if(!selDay){slots.innerHTML='<p class="note">Wybierz dzień.</p>';return}
+      slots.innerHTML='<h4>'+selDay.getDate()+' '+M[selDay.getMonth()].toLowerCase()+'</h4>';
+      for(var h=13;h<=19;h++)['00','30'].forEach(function(m){
+        var t=h+':'+m,b=document.createElement('button');
+        b.type='button';b.className='slot';b.textContent=t;b.disabled=taken(selDay,h+(m==='30'?1:0));
+        if(b.disabled){b.style.opacity='.35';b.style.cursor='default'}
+        b.setAttribute('aria-pressed',selTime===t);
+        b.onclick=function(){selTime=t;drawSlots();var p=slots.querySelector('.slot[aria-pressed="true"]');if(p)p.focus()};
+        slots.appendChild(b);
+      });
+    }
+    document.getElementById('cal-prev').onclick=function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);drawCal()};
+    document.getElementById('cal-next').onclick=function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);drawCal()};
+    send.onclick=function(){
+      var ds=selDay.toLocaleDateString('pl-PL'),g=document.getElementById('tguests').value;
+      location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Rezerwacja stolika '+ds+' '+selTime)+'&body='+encodeURIComponent('Dzień dobry,\n\nproszę o rezerwację stolika.\nData: '+ds+'\nGodzina: '+selTime+'\nLiczba osób: '+g+'\n\nImię i telefon: ');
+    };
+    drawCal();drawSlots();
+  })();
+})();
+</script>
+</body>
+</html>

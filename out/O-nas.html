@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17211b">
+<meta name="color-scheme" content="dark">
+<title>O nas - Karioka · Karpniki</title>
+<meta name="description" content="Karioka w Karpnikach: bar z domową kuchnią, pokoje i ogród z lawendą u stóp Rudaw Janowickich. Poznaj gospodarzy i zarezerwuj pobyt.">
+<meta property="og:title" content="O nas - Karioka · Karpniki">
+<meta property="og:description" content="Bar z domową kuchnią, pokoje i ogród z lawendą. Rudawska 63, Karpniki.">
+<meta property="og:image" content="w/about-owners.webp">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site.css">
+
+<style>
+:root{
+  --board:#17211b; --board-2:#1f2c24; --cream:#f3ecdf; --ink:#1d2821; --ink-2:#46514a;
+  --orange:#e8894f; --orange-d:#e8894f; --rust:#9a4416; --wainscot:#6f92b8;
+  --muted:#c9c1b2; --line:rgba(243,236,223,.14);
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--board);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:0}
+a{color:var(--orange);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}@media(hover:hover) and (pointer:fine){ a:hover{color:var(--cream)}}
+h1,h2,h3{font-family:'Young Serif',serif;font-weight:400;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+::selection{background:var(--orange-d);color:var(--board)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.on-cream :focus-visible{outline-color:var(--rust)}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--cream);color:var(--ink);padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+
+.btn{display:inline-block;padding:16px 26px;border-radius:999px;background:var(--orange-d);color:var(--board);font-weight:700;font-size:16px;text-decoration:none;transition:background .2s,transform .2s cubic-bezier(.2,.8,.2,1)}
+@media(hover:hover) and (pointer:fine){.btn:hover{background:var(--cream);color:var(--board)}}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid rgba(243,236,223,.35);padding:15px 25px}
+@media(hover:hover) and (pointer:fine){.btn.ghost:hover{background:var(--cream);color:var(--board)}}
+.on-cream .btn.ghost{color:var(--ink);border-color:rgba(29,40,33,.4)}
+@media(hover:hover) and (pointer:fine){.on-cream .btn.ghost:hover{background:var(--ink);color:var(--cream)}}
+
+.pad{padding:clamp(72px,9vw,130px) clamp(20px,4vw,56px)}
+.wrap{max-width:1180px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,80px);align-items:center}
+.ph{border-radius:16px;overflow:hidden;background:#223028}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.on-cream{background:var(--cream);color:var(--ink)}
+.on-cream a:not(.btn){color:var(--rust)}
+@media(hover:hover) and (pointer:fine){.on-cream a:not(.btn):hover{color:var(--ink)}}
+.stack{display:flex;flex-direction:column}
+
+/* lace: scalloped edge on cream sections */
+.lace{position:relative}
+.lace::before{content:"";position:absolute;left:0;right:0;top:-1px;height:14px;background:var(--board);
+  -webkit-mask:radial-gradient(circle at 10px 0,#000 9px,transparent 9.5px) 0 0/20px 14px repeat-x;
+  mask:radial-gradient(circle at 10px 0,#000 9px,transparent 9.5px) 0 0/20px 14px repeat-x}
+.wainscot{border-bottom:14px solid var(--wainscot)}
+
+@keyframes kfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.enter{animation:kfade .3s cubic-bezier(.23,1,.32,1) both}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.enter{animation:none}.btn{transition:none}}
+
+
+.facts{border-top:1px solid rgba(29,40,33,.16)}
+.facts>div{padding:20px 0;border-bottom:1px solid rgba(29,40,33,.16);display:flex;flex-direction:column;gap:6px}
+.facts h3{font-size:26px}
+.facts p{color:var(--ink-2);line-height:1.55}
+
+/* the chalkboard, set as real text */
+.board{background:var(--board-2);border:10px solid #3a2f25;border-radius:10px;padding:clamp(22px,3vw,40px);box-shadow:0 18px 40px -18px rgba(0,0,0,.6),inset 0 0 60px rgba(0,0,0,.35);font-family:'Caveat',cursive;color:#efe9dc}
+.board h3{font-family:'Caveat',cursive;font-weight:700;font-size:34px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;margin-bottom:8px}
+.board ul{list-style:none;margin:0 0 26px;padding:0;font-size:26px;line-height:1.3;font-weight:500}
+.board .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));column-gap:36px}
+.board .note{font-family:'Hanken Grotesk',sans-serif;font-size:14px;color:var(--muted);line-height:1.5;margin-top:4px}
+
+.contact-line{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:center;font-size:18px}
+.contact-line a{color:var(--cream);font-weight:600}
+
+.mbar{display:none}
+@media(max-width:760px){
+  nav.top{flex-wrap:wrap;gap:4px 12px;padding-block:8px}
+  nav.top .links{order:3;width:100%}
+  body{padding-bottom:76px}
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:100;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(23,33,27,.96);border-top:1px solid var(--line)}
+  .mbar a{flex:1;text-align:center;padding:14px 10px}
+  .hero-photo{max-height:70vh;margin-inline:auto;width:min(100%,380px)}
+}
+</style>
+<script src="i18n.js"></script>
+<link rel="stylesheet" href="fluid.css">
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<nav class="top" aria-label="Główna nawigacja">
+  <a class="brand" href="Karioka.html"><b>Karioka</b><small>Karpniki</small></a>
+  <div class="links">
+    <a href="Menu.html">Menu</a>
+    <a href="Karioka.html#pokoje">Pokoje</a>
+    <a href="Imprezy.html">Imprezy</a>
+    <a href="O-nas.html" aria-current="page">O nas</a>
+  </div>
+  <div class="navcta"><a class="tel" href="tel:+48721832199">721 832 199</a><a class="call" href="Rezerwacja.html">Zarezerwuj</a></div>
+</nav>
+
+<main id="tresc">
+<header class="pad" style="padding-bottom:clamp(48px,6vw,88px)">
+  <div class="wrap grid enter">
+    <div class="stack" style="gap:26px">
+      <!-- TODO (właściciele): dodać imiona i 2-3 zdania własnymi słowami - dlaczego Karioka, skąd lawenda. -->
+      <h1 style="font-size:clamp(48px,7.5vw,112px);line-height:.95;letter-spacing:-.03em">Gospodarze z Karpnik.</h1>
+      <p style="font-size:clamp(19px,1.7vw,24px);line-height:1.5;color:#d8d0c1;max-width:34ch">Karioka to rodzinne miejsce u stóp Rudaw Janowickich: bar z domową kuchnią, pokoje dla gości i ogród, w którym zwykle zostaje się dłużej, niż się planowało.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="Rezerwacja.html">Zarezerwuj</a><a class="btn ghost" href="tel:+48721832199">Zadzwoń</a></div>
+    </div>
+    <figure class="ph hero-photo" style="margin:0;aspect-ratio:4/5;border-radius:220px 220px 20px 20px">
+      <img src="w/about-owners.webp" width="1086" height="1448" alt="Właściciele Karioki, kobieta i mężczyzna, w sali baru z błękitną boazerią i lampami" fetchpriority="high">
+    </figure>
+  </div>
+</header>
+
+<section class="pad on-cream lace">
+  <div class="wrap grid">
+    <div class="ph" style="aspect-ratio:4/3;background:#e4dccd"><img src="w/garden-evening.webp" width="1448" height="1086" alt="Ogród Karioki wieczorem" loading="lazy"></div>
+    <div class="stack" style="gap:22px">
+      <h2 style="font-size:clamp(36px,4.6vw,64px);line-height:1.02;letter-spacing:-.02em">Bar, pokoje i ogród pod jednym dachem.</h2>
+      <div class="facts">
+        <div><h3>Kuchnia</h3><p>Pierogi, pstrąg, golonka, barszcz i naleśniki. Menu piszemy kredą przy barze.</p></div>
+        <div><h3>Pokoje</h3><p>Nocleg w Karpnikach, na miejscu. Zdjęcia i zapytanie o termin znajdziesz na stronie rezerwacji.</p></div>
+        <div><h3>Ogród</h3><p>Lawenda, plac zabaw i stoły na zewnątrz, gdy pogoda pozwala.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="okolica">
+  <div class="wrap grid" style="align-items:center">
+    <div class="stack" style="gap:22px">
+      <h2 style="font-size:clamp(38px,5vw,72px);line-height:1;letter-spacing:-.025em">Karpniki, u stóp Rudaw Janowickich.</h2>
+      <p style="font-size:18px;line-height:1.65;color:var(--muted);max-width:44ch">Jesteśmy przy ul. Rudawskiej 63, w wiosce, którą znają wędrowcy i miłośnicy zamków. Zamek w Karpnikach stoi w tej samej wsi, a stąd łatwo ruszyć na spacer po okolicy. Po drodze warto wpaść na obiad.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Rudawska+63,+58-533+Karpniki" target="_blank" rel="noopener">Pokaż na mapie</a><a class="btn ghost" href="Karioka.html#pokoje">Zobacz pokoje</a></div>
+    </div>
+    <div style="position:relative;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:#223028"><img src="w/castle.jpg" alt="Zamek w Karpnikach" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><a href="https://commons.wikimedia.org/wiki/File:2016_Zamek_w_Karpnikach_1.jpg" target="_blank" rel="noopener" style="position:absolute;right:8px;bottom:8px;font-size:11px;padding:3px 8px;border-radius:999px;background:rgba(23,33,27,.72);color:#f3ecdf;text-decoration:none">Jacek Halicki, Wikimedia Commons, CC BY 3.0</a></div>
+  </div>
+</section>
+
+<section class="pad on-cream lace wainscot">
+  <div class="wrap stack" style="gap:clamp(32px,4vw,52px)">
+    <div class="grid" style="align-items:end">
+      <h2 style="font-size:clamp(38px,5vw,72px);line-height:1;letter-spacing:-.025em">Stoły w ogrodzie na każdą okazję.</h2>
+      <p style="font-size:18px;line-height:1.65;color:var(--ink-2);max-width:52ch">Pod zadaszonym namiotem z girlandami świateł zjemy razem: spotkanie rodzinne, integracyjne czy piknik z grillem. Dzieci mają obok plac zabaw. Napisz lub zadzwoń w sprawie terminu i menu.</p>
+    </div>
+    <div class="ph" style="aspect-ratio:16/9;background:#e4dccd"><img src="w/about-party.webp" width="1800" height="1012" alt="Ogród Karioki z zadaszonym namiotem i girlandami świateł" loading="lazy"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="mailto:agrokarioka@poczta.onet.pl?subject=Zapytanie%20o%20przyj%C4%99cie">Zapytaj o termin</a><a class="btn ghost" href="Imprezy.html">Więcej o imprezach</a></div>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--orange-d);color:var(--board)">
+  <div class="wrap grid">
+    <div class="stack" style="gap:22px">
+      <p style="font-family:'Young Serif',serif;font-size:clamp(30px,3.6vw,50px);line-height:1.15;letter-spacing:-.01em">98% osób poleca Kariokę na Facebooku.</p>
+      <p style="font-size:18px;line-height:1.6;max-width:40ch">To 55 opinii od naszych gości. <a href="https://www.facebook.com/karioka.karpniki/" target="_blank" rel="noopener" style="color:var(--board);font-weight:700">Przeczytaj je na Facebooku</a>.</p>
+    </div>
+    <div class="ph" style="aspect-ratio:4/5;background:#c86a33;max-width:440px;justify-self:center;width:100%"><img src="w/about-lavender.webp" width="1000" height="1250" alt="Lawenda w ogrodzie Karioki" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="pad" style="text-align:center" id="kontakt">
+  <div class="wrap stack" style="align-items:center;gap:28px">
+    <h2 style="font-size:clamp(44px,6.5vw,92px);line-height:.98;letter-spacing:-.03em;max-width:14ch">Do zobaczenia w Karpnikach.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a class="btn" href="Rezerwacja.html">Zarezerwuj</a>
+      <a class="btn ghost" href="Karioka.html#pokoje">Zobacz pokoje</a>
+    </div>
+    <address style="font-style:normal" class="contact-line">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Rudawska+63,+58-533+Karpniki">ul. Rudawska 63, 58-533 Karpniki</a>
+      <a href="tel:+48721832199">721 832 199</a>
+      <a href="mailto:agrokarioka@poczta.onet.pl">agrokarioka@poczta.onet.pl</a>
+    </address>
+    <p style="color:var(--muted);font-size:15px">Godziny otwarcia podajemy na Facebooku i przez telefon.</p>
+  </div>
+</section>
+</main>
+
+<footer style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;padding:28px clamp(20px,4vw,56px);border-top:1px solid rgba(243,236,223,.12);font-size:14px;color:#b9c2b4">
+  <span style="font-family:'Young Serif',serif;font-size:22px;color:var(--cream)">Karioka</span>
+  <span>Bar i Agroturystyka · ul. Rudawska 63, 58-533 Karpniki</span>
+  <span style="display:flex;gap:18px;flex-wrap:wrap"><a href="tel:+48721832199">721 832 199</a><a href="mailto:agrokarioka@poczta.onet.pl">E-mail</a><a href="https://www.facebook.com/karioka.karpniki/" target="_blank" rel="noopener">Facebook</a></span>
+</footer>
+
+<div class="mbar"><a class="btn" href="Rezerwacja.html">Zarezerwuj</a><a class="btn ghost" href="tel:+48721832199">Zadzwoń</a></div>
+</body>
+</html>
