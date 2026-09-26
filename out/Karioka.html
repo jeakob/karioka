@@ -455,5 +455,13 @@ if(!rm.matches)t=setInterval(function(){set(i+1,1)},7000)}
 Q.addEventListener('pointerup',end);Q.addEventListener('pointercancel',end);
 go(0)})();
 </script>
+<script>
+window.addEventListener('load', function () {
+  document.querySelectorAll('img[loading="lazy"]').forEach(function (image) {
+    image.fetchPriority = 'low';
+    image.loading = 'eager';
+  });
+});
+</script>
 </body>
 </html>

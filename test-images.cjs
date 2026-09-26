@@ -13,6 +13,15 @@ const { chromium } = require('playwright');
       for (const name of ['Karioka', 'Menu', 'Imprezy', 'O-nas']) {
         const page = await browser.newPage({ viewport: { width, height: 900 }, deviceScaleFactor: dpr });
         await page.route('https://**', route => route.abort());
+        if (name === 'Karioka') await page.addInitScript(() => {
+          window.addEventListener('load', () => {
+            window.imageLoadState = {
+              deferred: document.querySelectorAll('img[loading="lazy"]').length,
+              mainReady: [...document.querySelectorAll('img[loading="eager"]')]
+                .every(image => image.complete && image.naturalWidth > 0),
+            };
+          });
+        });
         await page.goto(pathToFileURL(path.resolve(`out/${name}.html`)).href);
         await page.waitForTimeout(500);
         const initial = await page.locator('img').evaluateAll(images => images
@@ -22,7 +31,12 @@ const { chromium } = require('playwright');
         console.log(`${name} ${width}px @${dpr}x: ${initial.length} initial images, ${Math.round(bytes / 1024)} KiB`);
         if (!process.env.BASELINE) {
           assert.equal(await page.locator('img[fetchpriority="high"]').count(), 1);
-          if (name === 'Karioka') assert(initial.length < 15, 'Distant photos must be deferred');
+          if (name === 'Karioka') {
+            const state = await page.evaluate(() => window.imageLoadState);
+            assert(state.mainReady && state.deferred > 0, 'Load main photos before promoting deferred photos');
+            await page.locator('img').evaluateAll(images => Promise.all(images.map(image => image.decode())));
+            assert.equal(await page.evaluate(() => window.scrollY), 0, 'Photos should load without scrolling');
+          }
           for (const image of await page.locator('img').all()) {
             await image.scrollIntoViewIfNeeded();
             await image.evaluate(image => image.decode());
